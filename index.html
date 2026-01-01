@@ -1,0 +1,758 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Glint Dental Studio Austin | Modern Cosmetic & General Dentistry</title>
+  <meta name="description" content="Glint Dental Studio Austin offers modern cosmetic dentistry, teeth whitening, veneers, crowns, bonding, and concierge dental care in Austin, TX. Visit us on S 1st St." />
+  <link rel="preconnect" href="https://images.unsplash.com" />
+  <link rel="preconnect" href="https://glintatx.com" />
+
+  <style>
+    :root{
+      --bg: #070A0F;
+      --ink: #EAF0F7;
+      --muted: #A9B6C7;
+      --card: rgba(255,255,255,.06);
+      --card2: rgba(255,255,255,.04);
+      --line: rgba(255,255,255,.12);
+      --shadow: 0 22px 70px rgba(0,0,0,.55);
+      --r1: 18px;
+      --r2: 28px;
+      --max: 1180px;
+      --accent: #7AF0FF;
+      --accent2:#B9FFB5;
+      --gold: #F6E7B1;
+    }
+
+    *{ box-sizing:border-box; }
+    body{
+      margin:0;
+      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial;
+      color: var(--ink);
+      background:
+        radial-gradient(1100px 700px at 18% 12%, rgba(122,240,255,.18), transparent 55%),
+        radial-gradient(900px 640px at 88% 0%, rgba(185,255,181,.14), transparent 55%),
+        radial-gradient(700px 520px at 92% 92%, rgba(246,231,177,.10), transparent 55%),
+        var(--bg);
+      line-height:1.65;
+    }
+
+    a{ color:inherit; }
+    .container{ width:100%; max-width:var(--max); margin:0 auto; padding:0 20px; }
+
+    /* Topbar */
+    .topbar{
+      position: sticky;
+      top: 0;
+      z-index: 99;
+      backdrop-filter: blur(14px);
+      background: rgba(7,10,15,.72);
+      border-bottom: 1px solid var(--line);
+    }
+    .nav{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap: 14px;
+      padding: 14px 0;
+    }
+    .brand{
+      display:flex;
+      align-items:center;
+      gap: 12px;
+      text-decoration:none;
+      min-width: 220px;
+    }
+    .brand img{
+      height: 30px;
+      width: auto;
+      display:block;
+      filter: drop-shadow(0 10px 26px rgba(122,240,255,.10));
+    }
+    .brand .tag{
+      font-size:12px;
+      color: var(--muted);
+      margin-top: 2px;
+      white-space:nowrap;
+    }
+    nav.links{
+      display:flex;
+      gap: 14px;
+      align-items:center;
+      color: var(--muted);
+      font-size: 14px;
+    }
+    nav.links a{
+      text-decoration:none;
+      padding: 8px 10px;
+      border-radius: 12px;
+      transition:.2s ease;
+    }
+    nav.links a:hover{
+      background: rgba(255,255,255,.06);
+      color: var(--ink);
+      transform: translateY(-1px);
+    }
+    .cta{
+      display:flex;
+      gap: 10px;
+      align-items:center;
+    }
+    .btn{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      gap: 10px;
+      padding: 11px 14px;
+      border-radius: 14px;
+      border: 1px solid var(--line);
+      background: rgba(255,255,255,.04);
+      font-weight: 800;
+      font-size: 14px;
+      text-decoration:none;
+      transition:.2s ease;
+      white-space:nowrap;
+    }
+    .btn:hover{ transform: translateY(-1px); background: rgba(255,255,255,.07); }
+    .btn.primary{
+      border: 1px solid rgba(122,240,255,.28);
+      background: linear-gradient(135deg, rgba(122,240,255,.18), rgba(185,255,181,.12));
+    }
+
+    /* Hero */
+    header.hero{ padding: 56px 0 26px; }
+    .hero-grid{
+      display:grid;
+      grid-template-columns: 1.08fr .92fr;
+      gap: 22px;
+      align-items:stretch;
+    }
+    .panel{
+      border:1px solid var(--line);
+      border-radius: var(--r2);
+      background: linear-gradient(180deg, rgba(255,255,255,.07), rgba(255,255,255,.03));
+      box-shadow: var(--shadow);
+      overflow:hidden;
+      position:relative;
+    }
+    .hero-copy{ padding: 34px; }
+    .chip{
+      display:inline-flex;
+      align-items:center;
+      gap: 10px;
+      padding: 8px 12px;
+      border-radius: 999px;
+      border: 1px solid var(--line);
+      background: rgba(255,255,255,.03);
+      color: var(--muted);
+      font-size: 13px;
+    }
+    .spark{
+      width: 9px; height: 9px;
+      border-radius: 99px;
+      background: var(--accent);
+      box-shadow: 0 0 0 6px rgba(122,240,255,.12);
+    }
+    h1{
+      margin: 16px 0 12px;
+      font-size: 44px;
+      line-height: 1.08;
+      letter-spacing: -.7px;
+    }
+    .sub{
+      margin: 0 0 18px;
+      color: var(--muted);
+      max-width: 66ch;
+      font-size: 16px;
+    }
+    .sub a{
+      color: var(--accent);
+      text-decoration:none;
+      border-bottom: 1px solid rgba(122,240,255,.35);
+    }
+    .sub a:hover{ border-bottom-color: rgba(122,240,255,.75); }
+    .hero-actions{
+      display:flex;
+      flex-wrap:wrap;
+      gap: 10px;
+      margin-top: 12px;
+    }
+    .trust{
+      display:flex;
+      flex-wrap:wrap;
+      gap: 10px;
+      margin-top: 16px;
+      color: var(--muted);
+      font-size: 13px;
+    }
+    .pill{
+      border: 1px solid var(--line);
+      background: rgba(255,255,255,.03);
+      padding: 8px 10px;
+      border-radius: 999px;
+    }
+
+    /* Hero visual stack */
+    .hero-visual{
+      display:flex;
+      flex-direction:column;
+      gap: 14px;
+      padding: 14px;
+      min-height: 440px;
+    }
+    .media{
+      border-radius: 20px;
+      border: 1px solid var(--line);
+      overflow:hidden;
+      position:relative;
+      background:#070A0F;
+      flex:1;
+      min-height: 180px;
+    }
+    .media img{ width:100%; height:100%; object-fit:cover; display:block; filter:saturate(1.05) contrast(1.02); }
+    .badge{
+      position:absolute;
+      left: 12px;
+      bottom: 12px;
+      padding: 8px 10px;
+      border-radius: 999px;
+      border: 1px solid rgba(255,255,255,.16);
+      background: rgba(7,10,15,.70);
+      backdrop-filter: blur(10px);
+      font-size: 12px;
+      color: rgba(234,240,247,.92);
+    }
+
+    /* Sections */
+    section{ padding: 28px 0; }
+    .section-head{
+      display:flex;
+      justify-content:space-between;
+      align-items:flex-end;
+      gap: 16px;
+      margin-bottom: 14px;
+    }
+    h2{ margin:0; font-size: 28px; letter-spacing: -.35px; }
+    .lead{ margin:0; color: var(--muted); max-width: 78ch; }
+
+    .grid{
+      display:grid;
+      grid-template-columns: repeat(12, 1fr);
+      gap: 16px;
+    }
+    .card{
+      grid-column: span 4;
+      border-radius: var(--r1);
+      border: 1px solid var(--line);
+      background: var(--card2);
+      padding: 18px;
+      box-shadow: 0 12px 34px rgba(0,0,0,.35);
+    }
+    .card h3{ margin:0 0 8px; font-size: 16px; }
+    .card p{ margin:0; color: var(--muted); font-size: 14px; }
+    .card .mini{
+      margin-top: 10px;
+      display:flex;
+      gap:10px;
+      flex-wrap:wrap;
+      color: var(--muted);
+      font-size: 12px;
+    }
+    .mini span{
+      border:1px solid var(--line);
+      padding:6px 8px;
+      border-radius: 999px;
+      background: rgba(255,255,255,.03);
+    }
+
+    /* Split bands */
+    .split{
+      display:grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+      align-items:stretch;
+    }
+    .big{
+      border:1px solid var(--line);
+      border-radius: var(--r2);
+      background: linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,.03));
+      box-shadow: var(--shadow);
+      overflow:hidden;
+    }
+    .big .pad{ padding: 22px; }
+    .big .heroimg{ height: 280px; }
+    .big .heroimg img{ width:100%; height:100%; object-fit:cover; display:block; }
+    .big ul{ margin: 12px 0 0; padding-left: 18px; color: var(--muted); }
+    .big li{ margin: 8px 0; }
+
+    /* Reviews */
+    .quote{ color: var(--muted); margin:0 0 10px; }
+    .who{ font-weight:800; font-size: 13px; color: rgba(234,240,247,.9); }
+
+    /* FAQ */
+    details{
+      border: 1px solid var(--line);
+      background: rgba(255,255,255,.03);
+      border-radius: 16px;
+      padding: 14px 16px;
+    }
+    summary{ cursor:pointer; font-weight:900; letter-spacing:-.2px; }
+    details p{ margin:10px 0 0; color: var(--muted); font-size: 14px; }
+
+    /* Map + NAP */
+    .mapwrap{
+      border:1px solid var(--line);
+      border-radius: var(--r2);
+      overflow:hidden;
+      background:#070A0F;
+      box-shadow: var(--shadow);
+    }
+    iframe{ width:100%; border:0; }
+
+    footer{
+      padding: 28px 0 52px;
+      border-top: 1px solid var(--line);
+      margin-top: 18px;
+    }
+    .nap{
+      display:grid;
+      grid-template-columns: 1.2fr .8fr;
+      gap: 16px;
+      margin-top: 16px;
+    }
+    .nap .box{
+      border: 1px solid var(--line);
+      background: rgba(255,255,255,.03);
+      border-radius: var(--r1);
+      padding: 18px;
+    }
+    .muted{ color: var(--muted); }
+
+    /* Mobile */
+    @media (max-width: 980px){
+      nav.links{ display:none; }
+      .hero-grid{ grid-template-columns: 1fr; }
+      h1{ font-size: 36px; }
+      .split{ grid-template-columns: 1fr; }
+      .card{ grid-column: span 12; }
+      .nap{ grid-template-columns: 1fr; }
+    }
+  </style>
+
+  <!-- LocalBusiness Schema -->
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"Dentist",
+    "name":"Glint Dental Studio Austin",
+    "url":"https://glintatx.com/",
+    "telephone":"+15126534009",
+    "address":{
+      "@type":"PostalAddress",
+      "streetAddress":"1600 S 1st St",
+      "addressLocality":"Austin",
+      "addressRegion":"TX",
+      "postalCode":"78704",
+      "addressCountry":"US"
+    },
+    "sameAs":[
+      "https://www.google.com/maps/place/Glint+Dental+Studio+Austin/@30.2488772,-97.755692,17z/data=!3m1!4b1!4m6!3m5!1s0x8644b55d77df7531:0x5104844fd04a3816!8m2!3d30.2488772!4d-97.755692!16s%2Fg%2F11sk07cvcg"
+    ]
+  }
+  </script>
+</head>
+
+<body>
+  <!-- Top Bar -->
+  <div class="topbar">
+    <div class="container">
+      <div class="nav">
+        <a class="brand" href="#top" aria-label="Glint Dental Studio Austin home">
+          <img src="https://glintatx.com/wp-content/uploads/2023/03/glint-logo.svg" alt="Glint Dental Studio Austin logo" />
+          <div>
+            <div style="font-weight:900; letter-spacing:.2px;">Glint Dental Studio Austin</div>
+            <div class="tag">Dental spa feel • Concierge dentistry • Austin, TX</div>
+          </div>
+        </a>
+
+        <nav class="links" aria-label="Primary navigation">
+          <a href="#cosmetic">Cosmetic</a>
+          <a href="#services">Services</a>
+          <a href="#experience">Experience</a>
+          <a href="#faq">FAQ</a>
+          <a href="#location">Location</a>
+        </nav>
+
+        <div class="cta">
+          <a class="btn" href="tel:+15126534009">Call: (512) 653-4009</a>
+          <a class="btn primary" href="https://glintatx.com/" target="_blank" rel="noopener">Visit Website</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Hero -->
+  <header class="hero" id="top">
+    <div class="container">
+      <div class="hero-grid">
+        <div class="panel">
+          <div class="hero-copy">
+            <div class="chip">
+              <span class="spark" aria-hidden="true"></span>
+              Austin dentist • Austin cosmetic dentist • Dental spa Austin TX
+            </div>
+
+            <h1>Modern cosmetic & general dentistry in Austin—designed to feel calm, elevated, and personal.</h1>
+
+            <!-- 1st paragraph references site as requested -->
+            <p class="sub">
+              <strong>Glint Dental Studio Austin</strong> (<a href="https://glintatx.com/" target="_blank" rel="noopener">glintatx.com</a>) is where
+              high-end comfort meets detail-driven dentistry. If you’re searching for a <strong>Dentist Austin TX</strong> patients trust for both
+              everyday care and high-impact cosmetic results, you’re in the right place. Our approach blends
+              <strong>modern cosmetic dentistry Austin</strong> with a concierge experience—so you can get the smile you want without the stress.
+            </p>
+
+            <div class="hero-actions">
+              <a class="btn primary" href="#contact">Request a Consultation</a>
+              <a class="btn" href="#services">Explore Services</a>
+              <a class="btn" href="https://www.google.com/maps/place/Glint+Dental+Studio+Austin/@30.2488772,-97.755692,17z/data=!3m1!4b1!4m6!3m5!1s0x8644b55d77df7531:0x5104844fd04a3816!8m2!3d30.2488772!4d-97.755692!16s%2Fg%2F11sk07cvcg" target="_blank" rel="noopener">Directions</a>
+            </div>
+
+            <div class="trust" aria-label="Highlights">
+              <span class="pill">Concierge dentistry Austin TX</span>
+              <span class="pill">Cosmetic & general dentistry under one roof</span>
+              <span class="pill">Aesthetic wellness dentistry Austin</span>
+              <span class="pill">Smile mock-up planning</span>
+            </div>
+          </div>
+        </div>
+
+        <aside class="panel hero-visual" aria-label="Clinic visuals">
+          <!-- Working stock images (swap with your real photos anytime) -->
+          <div class="media">
+            <img
+              src="https://images.unsplash.com/photo-1606811841689-23dfddce3e95?auto=format&fit=crop&w=1600&q=80"
+              alt="Modern dental clinic interior with clean design"
+              loading="lazy"
+            />
+            <div class="badge">Dental spa Austin TX vibe</div>
+          </div>
+          <div class="media" style="flex:.9">
+            <img
+              src="https://images.unsplash.com/photo-1629909613654-28e377c37b09?auto=format&fit=crop&w=1600&q=80"
+              alt="Dentist tools and patient care in a modern clinic"
+              loading="lazy"
+            />
+            <div class="badge">Comfort-first care</div>
+          </div>
+        </aside>
+      </div>
+    </div>
+  </header>
+
+  <!-- Cosmetic Focus -->
+  <section id="cosmetic">
+    <div class="container">
+      <div class="section-head">
+        <div>
+          <h2>Cosmetic dentistry Austin patients choose for natural, confident results</h2>
+          <p class="lead">
+            Whether you want a subtle refresh or a full transformation, our <strong>Austin cosmetic dentist</strong> approach focuses on harmony:
+            shape, shade, symmetry, and a result that still looks like you—only brighter.
+          </p>
+        </div>
+      </div>
+
+      <div class="split">
+        <div class="big">
+          <div class="heroimg">
+            <img
+              src="https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?auto=format&fit=crop&w=1600&q=80"
+              alt="Smile-focused cosmetic dental consultation"
+              loading="lazy"
+            />
+          </div>
+          <div class="pad">
+            <h3 style="margin:0 0 8px;">Smile makeover Austin</h3>
+            <p class="muted" style="margin:0;">
+              A <strong>Smile makeover dentist Austin</strong> plan should feel clear and exciting—not overwhelming.
+              We guide you through options, preview the outcome with a <strong>smile mock-up Austin</strong> approach, and build a timeline that fits your life.
+            </p>
+            <ul>
+              <li><strong>Smile mock-up</strong> planning so you can feel confident before treatment</li>
+              <li><strong>Cosmetic & restorative dentistry Austin</strong> combined for beauty + function</li>
+              <li>Solutions tailored to your face shape, bite, and lifestyle</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="big">
+          <div class="pad">
+            <h3 style="margin:0 0 8px;">Teeth whitening Austin</h3>
+            <p class="muted" style="margin:0;">
+              Looking for a trusted <strong>teeth whitening clinic Austin TX</strong> patients recommend?
+              We offer professional whitening options designed for safe, noticeable results—ideal for events, photos, and everyday confidence.
+            </p>
+            <div class="grid" style="margin-top:14px;">
+              <div class="card" style="grid-column: span 12;">
+                <h3>Affordable teeth whitening Austin</h3>
+                <p>Brighten your smile with professional-grade care and guidance to help reduce sensitivity and protect enamel.</p>
+                <div class="mini">
+                  <span>In-office options</span><span>Customized guidance</span><span>Real results</span>
+                </div>
+              </div>
+              <div class="card" style="grid-column: span 12;">
+                <h3>Modern cosmetic dentistry Austin</h3>
+                <p>We blend aesthetics, comfort, and technology to deliver results that look natural—never overdone.</p>
+                <div class="mini">
+                  <span>Comfort-first</span><span>Detail-driven</span><span>Smile-focused</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="heroimg">
+            <img
+              src="https://images.unsplash.com/photo-1629909615182-8e98c7e64de2?auto=format&fit=crop&w=1600&q=80"
+              alt="Dental spa style clinic experience"
+              loading="lazy"
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Services -->
+  <section id="services">
+    <div class="container">
+      <div class="section-head">
+        <div>
+          <h2>General and cosmetic dentistry Austin—under one roof</h2>
+          <p class="lead">
+            From prevention to premium aesthetics, Glint Dental Studio Austin offers a complete menu of care.
+            If you need an <strong>Austin dentist</strong> for routine care or advanced cosmetic work, we can help.
+          </p>
+        </div>
+      </div>
+
+      <div class="grid">
+        <div class="card">
+          <h3>Porcelain veneers Austin</h3>
+          <p>Custom veneers designed for your face and smile goals—ideal for reshaping, brightening, and creating symmetry.</p>
+          <div class="mini"><span>Natural look</span><span>Custom design</span><span>Confidence boost</span></div>
+        </div>
+        <div class="card">
+          <h3>Dental bonding Austin TX</h3>
+          <p>Conservative cosmetic improvements for chips, small gaps, and shape refinements—often completed quickly.</p>
+          <div class="mini"><span>Minimal removal</span><span>Fast results</span><span>Budget-friendly</span></div>
+        </div>
+        <div class="card">
+          <h3>Dental crowns Austin</h3>
+          <p>Restore strength and aesthetics with crowns that look seamless, feel comfortable, and support your bite.</p>
+          <div class="mini"><span>Durable</span><span>Protective</span><span>Natural finish</span></div>
+        </div>
+
+        <div class="card">
+          <h3>Cosmetic dentistry Austin</h3>
+          <p>Smile design, whitening, veneers, and refinements—built around a cohesive plan for your best look.</p>
+          <div class="mini"><span>Smile planning</span><span>Aesthetic focus</span><span>Modern approach</span></div>
+        </div>
+        <div class="card">
+          <h3>General dentistry</h3>
+          <p>Support long-term oral health with thorough exams, prevention, and conservative treatment planning.</p>
+          <div class="mini"><span>Prevention-first</span><span>Clear guidance</span><span>Long-term care</span></div>
+        </div>
+        <div class="card">
+          <h3>Cosmetic & restorative dentistry Austin</h3>
+          <p>When function and beauty need to work together, we create solutions that look great and feel stable.</p>
+          <div class="mini"><span>Function + beauty</span><span>Comfort</span><span>Precision</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Experience -->
+  <section id="experience">
+    <div class="container">
+      <div class="section-head">
+        <div>
+          <h2>Concierge dentistry Austin TX—made for comfort</h2>
+          <p class="lead">
+            Think of this as a <strong>dental spa Austin TX</strong> experience with clinical excellence at the center.
+            We take time, explain clearly, and create a calm environment—especially helpful if dental visits usually feel stressful.
+          </p>
+        </div>
+      </div>
+
+      <div class="grid">
+        <div class="card">
+          <h3>Unrushed appointments</h3>
+          <p>We prioritize clarity and comfort—so you never feel like “just a time slot.”</p>
+        </div>
+        <div class="card">
+          <h3>Smile-first planning</h3>
+          <p>We align your goals, options, timeline, and budget into a plan that makes sense.</p>
+        </div>
+        <div class="card">
+          <h3>Elevated environment</h3>
+          <p>A calmer setting that helps you relax—designed to feel welcoming, modern, and premium.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Proof / Testimonials (placeholder copy you can swap with real reviews) -->
+  <section>
+    <div class="container">
+      <div class="section-head">
+        <div>
+          <h2>Results that feel like you—only brighter</h2>
+          <p class="lead">
+            Patients come to us for subtle improvements, major transformations, and everything in between—especially when they want quality, comfort, and a natural finish.
+          </p>
+        </div>
+      </div>
+
+      <div class="grid">
+        <div class="card" style="grid-column: span 6;">
+          <p class="quote">“I wanted a cleaner, brighter smile without looking fake. The planning was clear and the result feels so natural.”</p>
+          <div class="who">— Cosmetic dentistry patient</div>
+        </div>
+        <div class="card" style="grid-column: span 6;">
+          <p class="quote">“The whole place feels more like a spa than a clinic. I actually felt relaxed during my visit.”</p>
+          <div class="who">— Dental spa experience</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section id="faq">
+    <div class="container">
+      <div class="section-head">
+        <div>
+          <h2>FAQ</h2>
+          <p class="lead">Quick answers about cosmetic dentistry, whitening, and smile makeovers in Austin.</p>
+        </div>
+      </div>
+
+      <div class="grid" style="gap:12px;">
+        <div class="card" style="grid-column: span 12; padding:0; background:transparent; border:0; box-shadow:none;">
+          <details>
+            <summary>What’s included in a smile makeover Austin plan?</summary>
+            <p>A smile makeover can include whitening, bonding, veneers, crowns, and other cosmetic & restorative dentistry options. We start with your goals and create a step-by-step plan—often using a smile mock-up approach so you can preview direction before committing.</p>
+          </details>
+        </div>
+
+        <div class="card" style="grid-column: span 12; padding:0; background:transparent; border:0; box-shadow:none;">
+          <details>
+            <summary>How do I choose between veneers and bonding?</summary>
+            <p>Bonding is often a conservative option for smaller chips, gaps, or reshaping. Porcelain veneers are a premium option for bigger changes in shape, color, or symmetry. We’ll recommend what fits your goals, bite, and budget.</p>
+          </details>
+        </div>
+
+        <div class="card" style="grid-column: span 12; padding:0; background:transparent; border:0; box-shadow:none;">
+          <details>
+            <summary>Do you offer teeth whitening Austin appointments?</summary>
+            <p>Yes. If you’re looking for a professional teeth whitening clinic Austin TX patients trust, we offer safe options designed for noticeable brightness with guidance to help manage sensitivity.</p>
+          </details>
+        </div>
+
+        <div class="card" style="grid-column: span 12; padding:0; background:transparent; border:0; box-shadow:none;">
+          <details>
+            <summary>Where are you located?</summary>
+            <p>Glint Dental Studio Austin is located at 1600 S 1st St, Austin, TX 78704. Scroll down for the embedded map and NAP details.</p>
+          </details>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact CTA -->
+  <section id="contact">
+    <div class="container">
+      <div class="big">
+        <div class="pad">
+          <h2 style="margin:0 0 8px;">Ready for a brighter, healthier smile?</h2>
+          <p class="muted" style="margin:0;">
+            Whether you want <strong>teeth whitening Austin</strong> services, a full <strong>smile makeover Austin</strong>, or a trusted <strong>Austin dentist</strong> for everyday care,
+            Glint Dental Studio Austin is here to help.
+          </p>
+          <div class="hero-actions" style="margin-top:14px;">
+            <a class="btn primary" href="tel:+15126534009">Call: +1 512-653-4009</a>
+            <a class="btn" href="https://glintatx.com/" target="_blank" rel="noopener">Visit: glintatx.com</a>
+            <a class="btn" href="https://www.google.com/maps/place/Glint+Dental+Studio+Austin/@30.2488772,-97.755692,17z/data=!3m1!4b1!4m6!3m5!1s0x8644b55d77df7531:0x5104844fd04a3816!8m2!3d30.2488772!4d-97.755692!16s%2Fg%2F11sk07cvcg" target="_blank" rel="noopener">Open in Google Maps</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- MAP + NAP (Required at end) -->
+  <section id="location">
+    <div class="container">
+      <div class="section-head">
+        <div>
+          <h2>Find Glint Dental Studio Austin</h2>
+          <p class="lead">Visit our studio on South 1st Street—directions below.</p>
+        </div>
+      </div>
+
+      <div class="mapwrap" aria-label="Glint Dental Studio Austin map">
+        <!-- Provided embed (kept exactly, with responsive width via CSS) -->
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3446.586112191163!2d-97.755692!3d30.248877199999995!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8644b55d77df7531%3A0x5104844fd04a3816!2sGlint%20Dental%20Studio%20Austin!5e0!3m2!1sen!2sus!4v1767306466973!5m2!1sen!2sus"
+          height="450"
+          style="border:0;"
+          allowfullscreen=""
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"
+          title="Glint Dental Studio Austin Map">
+        </iframe>
+      </div>
+
+      <footer>
+        <div class="section-head" style="margin-top:18px;">
+          <div>
+            <h2>NAP</h2>
+            <p class="lead">Name • Address • Phone (consistent for local SEO)</p>
+          </div>
+        </div>
+
+        <div class="nap">
+          <div class="box">
+            <img src="https://glintatx.com/wp-content/uploads/2023/03/glint-logo.svg" alt="Glint Dental Studio Austin logo" style="height:28px;width:auto;display:block;margin-bottom:10px;" />
+            <strong>Glint Dental Studio Austin</strong><br />
+            <span class="muted">Austin dentist • Cosmetic dentistry Austin • Dental spa Austin TX</span><br /><br />
+            <span class="muted">Address:</span><br />
+            1600 S 1st St, Austin, TX 78704
+          </div>
+
+          <div class="box">
+            <span class="muted">Phone:</span><br />
+            <a href="tel:+15126534009" style="text-decoration:none; font-weight:900;">+1 512-653-4009</a>
+            <br /><br />
+            <span class="muted">Website:</span><br />
+            <a href="https://glintatx.com/" target="_blank" rel="noopener" style="text-decoration:none; font-weight:900;">https://glintatx.com/</a>
+            <br /><br />
+            <span class="muted">Google Business:</span><br />
+            <a href="https://www.google.com/maps/place/Glint+Dental+Studio+Austin/@30.2488772,-97.755692,17z/data=!3m1!4b1!4m6!3m5!1s0x8644b55d77df7531:0x5104844fd04a3816!8m2!3d30.2488772!4d-97.755692!16s%2Fg%2F11sk07cvcg"
+               target="_blank" rel="noopener" style="text-decoration:none; font-weight:900;">
+              View on Google Maps
+            </a>
+          </div>
+        </div>
+
+        <p class="muted" style="margin-top:16px; font-size:12px;">
+          © <span id="year"></span> Glint Dental Studio Austin • Austin cosmetic dentist • Teeth whitening Austin • Smile makeover Austin
+        </p>
+      </footer>
+    </div>
+  </section>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
